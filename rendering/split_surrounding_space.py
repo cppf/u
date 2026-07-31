@@ -1,12 +1,9 @@
 """Separates leading/trailing whitespace from the core content of a unit."""
 
-from typing import Tuple
-
-
 _WHITESPACE = " \t\r\n"
 
 
-def split_surrounding_space(s: str) -> Tuple[str, str, str]:
+def split_surrounding_space(s: str) -> tuple[str, str, str]:
     """Separates leading/trailing whitespace from the core content of a unit.
 
     Returns (lead, core, trail) so wrapping only touches the visible text.
