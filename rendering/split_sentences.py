@@ -1,19 +1,17 @@
 """Splits text into sentences."""
 
-from typing import List
-
 from rendering.closing_mark import is_closing_mark
 
 
 _TERMINATORS = (".", "!", "?")
 
 
-def split_sentences(text: str) -> List[str]:
+def split_sentences(text: str) -> list[str]:
     """Splits text into sentences, ending each unit after a
     sentence-terminating punctuation mark (. ! ?) plus any trailing quote
     or bracket, keeping following whitespace attached to the next sentence.
     """
-    units: List[str] = []
+    units: list[str] = []
     chars = text  # Python strings already index by code point
     start = 0
     i = 0
