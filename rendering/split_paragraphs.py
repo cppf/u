@@ -1,19 +1,17 @@
 """Splits text on blank-line boundaries, preserving separators."""
 
-from typing import List
 
-
-def split_paragraphs(text: str) -> List[str]:
+def split_paragraphs(text: str) -> list[str]:
     """Splits text on blank-line boundaries (one or more blank lines),
     keeping the separating newlines attached so spacing is preserved.
     """
-    units: List[str] = []
-    cur: List[str] = []
+    units: list[str] = []
+    cur: list[str] = []
 
     # Mirror Go's strings.SplitAfter(text, "\n"): every line keeps its
     # trailing "\n" attached, and a final fragment with no trailing
     # newline (possibly empty) is included too.
-    lines: List[str] = []
+    lines: list[str] = []
     start = 0
     for idx, ch in enumerate(text):
         if ch == "\n":
