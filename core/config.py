@@ -1,8 +1,7 @@
 """Loads the settings needed to start the bot from environment variables."""
 
-from dataclasses import dataclass
-from typing import Optional
 import os
+from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
@@ -29,9 +28,9 @@ def load_config() -> Config:
 
 
 def load_config_with_fallback(
-    fallback_token: Optional[str],
-    fallback_port: Optional[int],
-    fallback_domain: Optional[str],
+    fallback_token: str | None,
+    fallback_port: int | None,
+    fallback_domain: str | None,
 ) -> Config:
     """Reads configuration from environment variables, falling back to
     the given values for any variable that is unset or empty in the
