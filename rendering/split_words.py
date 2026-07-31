@@ -1,17 +1,15 @@
 """Splits text into words, keeping whitespace attached for lossless reassembly."""
 
-from typing import List
-
 
 _SPACE_CHARS = (" ", "\t", "\n", "\r")
 
 
-def split_words(text: str) -> List[str]:
+def split_words(text: str) -> list[str]:
     """Splits text into words, keeping the whitespace between them attached
     to the following word so reassembly is lossless.
     """
-    units: List[str] = []
-    cur: List[str] = []
+    units: list[str] = []
+    cur: list[str] = []
     in_space = False
     started = False
 
