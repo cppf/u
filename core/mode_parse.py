@@ -1,7 +1,5 @@
 """Maps a settings button label back to a Mode."""
 
-from typing import Optional
-
 from core.mode import Mode
 
 
@@ -13,7 +11,7 @@ _BY_LABEL = {
 }
 
 
-def parse_mode(label: str) -> Optional[Mode]:
+def parse_mode(label: str) -> Mode | None:
     """Maps a settings button label back to a Mode.
 
     Returns None if label does not match a known mode.

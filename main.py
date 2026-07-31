@@ -2,6 +2,13 @@
 
 import logging
 
+import deploy_config
+
+from core.config import load_config_with_fallback
+from stats.db import init_db
+from stats.register_stats_handlers import register_stats_handlers
+from stats.track_middleware import register_track_middleware
+
 from telegram_ui.main_menu import new_main_menu
 from telegram_ui.new_bot import new_bot
 from telegram_ui.register_content_handlers import register_content_handlers
@@ -11,12 +18,6 @@ from telegram_ui.settings_menu import new_settings_menu
 from telegram_ui.store import new_store
 from telegram_ui.webhook_url import webhook_url
 
-from core.config import load_config_with_fallback
-from stats.db import init_db
-from stats.register_stats_handlers import register_stats_handlers
-from stats.track_middleware import register_track_middleware
-
-import deploy_config
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
